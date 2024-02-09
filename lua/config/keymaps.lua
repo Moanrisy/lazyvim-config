@@ -23,8 +23,14 @@ end
 local makeTest = function()
   Util.terminal({ "make", "test" }, {})
 end
+
+local makeCoverage = function()
+  Util.terminal({ "make", "coverage" }, {})
+end
+
 keymap.set("n", "<M-a>", makeRun, { desc = "make run" })
 keymap.set("n", "<M-s>", makeTest, { desc = "make test" })
+keymap.set("n", "<M-d>", makeCoverage, { desc = "make coverage" })
 
 -- keymap.set("n", "<C-1>", termBevyDynamicLinking, { desc = "cargo run" })
 keymap.set("t", "<C-1>", "<cmd>close<cr>", { desc = "Hide Terminal" })
